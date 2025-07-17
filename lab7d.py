@@ -1,55 +1,101 @@
 #!/usr/bin/env python3
-# Student ID: [seneca_id] 
+
+
+
 class Time:
+
     """Simple object type for time of the day.
-        data attributes: hour, minute, second
-        function attributes: __init__, __str__, __repr__
-                            time_to_sec, format_time,
-                            change_time, sum_time
+
+       data attributes: hour, minute, second
+
     """
-    def __init__(self,hour=12,minute=0,second=0):
-        """constructor for time object""" 
+
+
+
+    def __init__(self, hour=12, minute=0, second=0):
+
         self.hour = hour
+
         self.minute = minute
+
         self.second = second
 
+
+
     def format_time(self):
-        """Return time object (t) as a formatted string"""
+
+        """Return time object as a formatted string"""
+
         return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
 
-    def sum_times(self, t2):
-        """Add two time objests and return the sum."""
-        self_sec = self.time_to_sec()
-        t2_sec = t2.time_to_sec()
-        sum = sec_to_time(self_sec + t2_sec)
-        return sum
 
-    def change_time(self, seconds):
-        time_seconds = self.time_to_sec()
-        nt = sec_to_time(time_seconds + seconds)
-        self.hour, self.minute, self.second = nt.hour, nt.minute, nt.second 
-        return None
-
-    def time_to_sec(self):
-        '''convert a time object to a single integer representing the 
-        number of seconds from mid-night'''
-        minutes = self.hour * 60 + self.minute
-        seconds = minutes * 60 + self.second
-        return seconds
 
     def valid_time(self):
-        """check for the validity of the time object attributes:
-        24 > hour > 0, 60 > minute > 0, 60 > second > 0 """
+
+        """Check if time is valid"""
+
         if self.hour < 0 or self.minute < 0 or self.second < 0:
+
             return False
-        if self.minute >= 60 or self.second >= 60 or self.hour >= 24:
+
+        if self.hour >= 24 or self.minute >= 60 or self.second >= 60:
+
             return False
+
         return True
 
+def change_time(self, seconds):
+
+        """Modify the time object by adding seconds (can be negative)"""
+
+        total_sec = time_to_sec(self) + seconds
+
+        total_sec %= 86400  # Wrap around 24 hours (1 day = 86400 seconds)
+
+        updated = sec_to_time(total_sec)
+
+        self.hour = updated.hour
+
+        self.minute = updated.minute
+
+        self.second = updated.second
+
+        return None
+
+
+
+    def sum_times(self, other_time):
+
+        """Return a new Time object which is the sum of this time and another"""
+
+        total_sec = time_to_sec(self) + time_to_sec(other_time)
+
+        total_sec %= 86400
+
+        return sec_to_time(total_sec)
+
+
+
+
+
+# External helper functions (not part of the class)
+
+def time_to_sec(time):
+
+    """Convert time object to total seconds"""
+
+    return time.hour * 3600 + time.minute * 60 + time.second
+
+
+
 def sec_to_time(seconds):
-    '''convert a given number of seconds to a time object in 
-        hour, minute, second format'''
+
+    """Convert total seconds to a Time object"""
+
     time = Time()
+
     minutes, time.second = divmod(seconds, 60)
-    time.hour, time.minute = divmod(minutes, 60)
+
+    time.hour, time.minute =divmod(minutes, 60)
+
     return time

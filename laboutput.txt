@@ -1,0 +1,84 @@
+test_0 (__main__.lab7a.test_0)
+[Lab 7] - [Investigation 1] - [Part 1] - Test for file creation: ./lab7a.py ... ok
+test_1 (__main__.lab7a.test_1)
+[Lab 7] - [Investigation 1] - [Part 1] - Test for file creation: ./lab7a1.py ... ok
+test_a (__main__.lab7a.test_a)
+[Lab 7] - [Investigation 1] - [Part 1] - Test for errors running: ./lab7a1.py ... ok
+test_a1 (__main__.lab7a.test_a1)
+[Lab 7] - [Investigation 1] - [Part 1] - Test for correct shebang line: ./lab7a1.py ... ok
+test_a_instantiate_class_0 (__main__.lab7a.test_a_instantiate_class_0)
+[Lab 7] - [Investigation 1] - [Part 1] - Test for Creating object - should fail with 4 arguments ... ok
+test_a_instantiate_class_1 (__main__.lab7a.test_a_instantiate_class_1)
+[Lab 7] - [Investigation 1] - [Part 1] - Test for Creating object - should fail with string arguments ... ok
+test_b1_sum_times (__main__.lab7a.test_b1_sum_times)
+[Lab 7] - [Investigation 1] - [Part 1] - Test for sum_times() - should provide the correct output ... ok
+test_b2_sum_times (__main__.lab7a.test_b2_sum_times)
+[Lab 7] - [Investigation 1] - [Part 1] - Test for sum_times() - should provide the correct output ... ok
+test_0 (__main__.lab7b.test_0)
+[Lab 7] - [Investigation 1] - [Part 2] - Test for file creation: ./lab7b.py ... ok
+test_a1 (__main__.lab7b.test_a1)
+[Lab 7] - [Investigation 1] - [Part 2] - Test for correct shebang line: ./lab7b.py ... ok
+test_a_instantiate_class_0 (__main__.lab7b.test_a_instantiate_class_0)
+[Lab 7] - [Investigation 1] - [Part 2] - Test for Creating object - should fail with 4 arguments ... ok
+test_a_instantiate_class_1 (__main__.lab7b.test_a_instantiate_class_1)
+[Lab 7] - [Investigation 1] - [Part 2] - Test for Creating object - should fail with string arguments ... ok
+test_b1_change_time (__main__.lab7b.test_b1_change_time)
+[Lab 7] - [Investigation 1] - [Part 2] - Test for change_time() with +1800 seconds ... ok
+test_b2_change_time (__main__.lab7b.test_b2_change_time)
+[Lab 7] - [Investigation 1] - [Part 2] - Test for change_time() with -1800 seconds ... ok
+test_0 (__main__.lab7c.test_0)
+[Lab 7] - [Investigation 1] - [Part 3] - Test for file creation: ./lab7c.py ... ok
+test_1 (__main__.lab7c.test_1)
+[Lab 7] - [Investigation 1] - [Part 3] - Test for file creation: ./lab7c1.py ... ok
+test_a (__main__.lab7c.test_a)
+[Lab 7] - [Investigation 1] - [Part 3] - Test for errors running: ./lab7c1.py ... ok
+test_a_instantiate_class_0 (__main__.lab7c.test_a_instantiate_class_0)
+[Lab 7] - [Investigation 1] - [Part 3] - Test for Creating object - should fail with 4 arguments ... ok
+test_a_instantiate_class_1 (__main__.lab7c.test_a_instantiate_class_1)
+[Lab 7] - [Investigation 1] - [Part 3] - Test for Creating object - should fail with string arguments ... ok
+test_b1_time_to_sec (__main__.lab7c.test_b1_time_to_sec)
+[Lab 7] - [Investigation 1] - [Part 3] - Test for time_to_sec() function in ./lab7c.py ... ok
+test_b2_sec_to_time (__main__.lab7c.test_b2_sec_to_time)
+[Lab 7] - [Investigation 1] - [Part 3] - Test for sec_to_time() function in .lab7c.py ... ok
+test_0 (__main__.lab7d.test_0)
+[Lab 7] - [Investigation 2] - [Part 1] - Test for file creation: ./lab7d.py ... ok
+test_a_instantiate_class_0 (__main__.lab7d.test_a_instantiate_class_0)
+[Lab 7] - [Investigation 2] - [Part 1] - Test for Creating object in ./lab7d.py - should fail with 4 arguments ... ok
+test_a_instantiate_class_1 (__main__.lab7d.test_a_instantiate_class_1)
+[Lab 7] - [Investigation 2] - [Part 1] - Test for Creating object in ./lab7d.py - should fail with string arguments ... ok
+test_b1_time_to_sec (__main__.lab7d.test_b1_time_to_sec)
+[Lab 7] - [Investigation 2] - [Part 1] - Test for time_to_sec() method in ./lab7d.py ... FAIL
+
+======================================================================
+FAIL: test_b1_time_to_sec (__main__.lab7d.test_b1_time_to_sec)
+[Lab 7] - [Investigation 2] - [Part 1] - Test for time_to_sec() method in ./lab7d.py
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/sbashyal/ops445/lab-7/lab-7-BrosCleaning/./CheckLab7.py", line 250, in test_b1_time_to_sec
+    import lab7d as lab7dStudent
+  File "/home/sbashyal/ops445/lab-7/lab-7-BrosCleaning/lab7d.py", line 67
+    def sum_times(self, other_time):
+                                    ^
+IndentationError: unindent does not match any outer indentation level
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sbashyal/ops445/lab-7/lab-7-BrosCleaning/./CheckLab7.py", line 254, in test_b1_time_to_sec
+    self.fail(error_fail)
+AssertionError: time_to_sec() in lab7d.py contains errors(HINT: review the script and fix errors)
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.014s
+
+FAILED (failures=1)
+OPS445 Lab Report - System Information for running ./CheckLab7.py
+=================================================================
+    User login name: sbashyal
+    Linux system name: sbashyal-virtual-machine
+    Python executable: /usr/bin/python3
+    Python version: 3123
+    OS Platform: linux
+    Working Directory: /home/sbashyal/ops445/lab-7/lab-7-BrosCleaning
+    Start at: Thu Jul 17 12:15:41 2025
+=================================================================
